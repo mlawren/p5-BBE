@@ -134,6 +134,9 @@ subtest DICT => sub {
       { 'spam.mp3' =>
           { 'author' => 'Alice', 'length' => 100000, 'undef' => undef } };
 
+    decod_ok $DATA1 => $data1;
+    decod_ok $DATA2 => $data2;
+
     error_ok
       '{~}' => qr/\Adict key is not a string at 1\b/,
       'dict key cannot be undef';

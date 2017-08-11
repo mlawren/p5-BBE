@@ -138,6 +138,9 @@ subtest 'DICT' => sub {
       . 'U5:bytes'
       . $BYTES
       . 'U6:lengthI100000,U5:undef~' . '}}';
+
+    enc_ok $data1 => $DATA1;
+    enc_ok $data2 => $DATA2;
 };
 
 eval { encode_bifcode() };
