@@ -51,13 +51,11 @@ sub _error {
     my $msg = shift // $messages{$type} // '(no message)';
     $msg =~ s! at$!' at '. ( pos() // 0 )!e;
 
-    eval qq{
-        package Bifcode::Error::$type;
-        use overload
-          bool => sub { 1 },
-          '""' => sub { \${\$_[0]} . ' (' . ( ref \$_[0] ) . ')' },
-          fallback => 1;
-    };
+    eval 'package Bifcode::Error::' . $type . q{;
+        use overload;
+        bool   => sub { 1 },
+          '""' => sub { ${ $_[0] } . ' (' . ( ref $_[0] ) . ')' },
+          fallback => 1; };
     bless \$msg, 'Bifcode::Error::' . $type;
 }
 
