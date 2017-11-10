@@ -5,10 +5,18 @@ use warnings;
 use boolean ();
 use Carp 'croak';
 use Exporter::Tidy all => [
-    qw( encode_bifcode
+    qw(
+      encode_bifcode
       decode_bifcode
       force_bifcode
-      diff_bifcode)
+      diff_bifcode
+      bifcode
+      bifcode_bool
+      bifcode_bytes
+      bifcode_float
+      bifcode_int
+      bifcode_utf8
+      )
 ];
 
 # ABSTRACT: Serialisation similar to Bencode + undef/UTF8
@@ -264,6 +272,8 @@ sub force_bifcode {
     croak _error 'ForceUsage' unless defined $ref and defined $type;
     bless \$ref, 'Bifcode::' . uc($type);
 }
+
+sub bifcode_float { bless \$_[0], 'Bifcode::FLOAT' }
 
 sub _expand_bifcode {
     my $bifcode = shift;
