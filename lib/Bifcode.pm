@@ -313,7 +313,7 @@ __END__
 
 =head1 NAME
 
-Bifcode - simple serialization format
+Bifcode - simple serialization format (SUPERSEEDED)
 
 =head1 VERSION
 
@@ -346,6 +346,8 @@ Bifcode - simple serialization format
     my $decoded = decode_bifcode $bifcode;
 
 =head1 DESCRIPTION
+
+[B<SUPERSEEDED> by L<Bifcode::V2>]
 
 B<Bifcode> implements the I<bifcode> serialisation format, a mixed
 binary/text encoding with support for the following data types:

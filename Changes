@@ -16,7 +16,8 @@
         - None.
 
     Packaging:
-        - None.
+        - Mention that this module is SUPERSEEDED by Bifcode::V2.
+        - Minor updates.
 
 1.002 (2018-09-23)
 

@@ -1,5 +1,5 @@
 NAME
-    Bifcode - simple serialization format
+    Bifcode - simple serialization format (SUPERSEEDED)
 
 VERSION
     1.003_1 (yyyy-mm-dd)
@@ -29,6 +29,8 @@ SYNOPSIS
         my $decoded = decode_bifcode $bifcode;
 
 DESCRIPTION
+    [SUPERSEEDED by Bifcode::V2]
+
     Bifcode implements the *bifcode* serialisation format, a mixed
     binary/text encoding with support for the following data types:
 
